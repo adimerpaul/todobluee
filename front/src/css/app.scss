@@ -1,0 +1,12 @@
+// app global css in SCSS form
+*{
+  font-family: Arial, sans-serif;
+}
+//Lobster-Regular
+@font-face {
+  font-family: 'Lobster-Regular';
+  src: url('./fonts/Lobster-Regular.ttf') format('truetype');
+}
+.lobster{
+  font-family: 'Lobster-Regular';
+}
