@@ -81,7 +81,10 @@
               </q-item>
             </q-item-label>
             <q-separator dark />
-            <q-item clickable dense v-ripple v-for="link in essentialLinks" :key="link.title" :to="link.to" exact :class="`text-white ${rutaActual==link.to?'bg-secondary':''}`">
+            <template v-for="link in essentialLinks" :key="link.title">
+            <q-item clickable dense v-ripple  :to="link.to" exact
+                    :class="`text-white ${rutaActual==link.to?'bg-secondary':''}`"
+                    v-if="$store.user.role === 'SUPERADMIN' || $store.user.role === 'ADMIN' || link.can === 'ALL'">
               <q-item-section avatar>
                 <q-avatar  text-color="white" :icon="`${rutaActual==link.to?link.icon:'o_'+link.icon}`" :size="`${rutaActual==link.to?'45px':'38px'}`" />
               </q-item-section>
@@ -89,7 +92,7 @@
                 <q-item-label :class="`text-white ${rutaActual==link.to?'text-bold':''}`">{{ link.title }}</q-item-label>
               </q-item-section>
             </q-item>
-
+            </template>
           </q-list>
         </q-header>
         <q-footer>
@@ -117,15 +120,15 @@ export default {
     return {
       leftDrawerOpen: false,
       essentialLinks: [
-        { title: 'Inicio', icon: 'home', to: '/' },
-        { title: 'Ventas', icon: 'shopping_basket', to: '/sales' },
+        { title: 'Inicio', icon: 'home', to: '/' , can: 'ALL'},
+        { title: 'Ventas', icon: 'shopping_basket', to: '/sales', can: 'ALL' },
         // { title: 'Insumos', icon: 'inventory_2', to: '/supplies' },
         // { title: 'Transacciones', icon: 'shopping_cart', to: '/purchases' },
         // { title: 'Historial', icon: 'history', to: '/history' },
         // { title: 'Diarios', icon: 'assignment', to: '/diaries' },
-        { title: 'Productos', icon: 'shopping_cart', to: '/products' },
-        { title: 'Usuarios', icon: 'people', to: '/users' },
-        { title: 'Clientes', icon: 'person', to: '/clients' },
+        { title: 'Productos', icon: 'shopping_cart', to: '/products', can: 'ADMIN' },
+        { title: 'Usuarios', icon: 'people', to: '/users', can: 'ADMIN' },
+        { title: 'Clientes', icon: 'person', to: '/clients', can: 'ADMIN' },
       ],
     };
   },
