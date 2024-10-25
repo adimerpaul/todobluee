@@ -225,11 +225,11 @@ Oruro</div>
     <div style="padding: 0.0cm 0.3cm 0.0cm 0.3cm;  font-family:Verdana, sans-serif; position:relative; margin-top:0">
        ${o=="INGRESO"?'<div class="numero" style="">'+t.llamada+"</div>":""}
        ${o=="INGRESO"&&t.name!="SN"?'<div class="textocab" style="">'+t.name+"</div>":""}
-     
+
       <div class='titulo1'>
       ${o=="INGRESO"?"CONTACTOS: 76130006":"RECIBO DE EGRESO"}
       </div>
-      <div class='titulo2'>AV. TACNA ENTRE JAEN Y TOMAS FRIAS</div>
+      <div class='titulo2'>Calle Tomas Frías N.º 551 entre Arica e Iquique PLAZA: RAFAEL PABON</div>
       <table class='tab1'><tr><td>`+t.date+"</td><td>"+t.time+`</td></tr></table><br>
       ${s}
       ${o=="INGRESO"?'<div class="pie" style="text-align: right;font-weight: bold;font-size: 15px">TICKET '+t.numero+' <span style="'+a+'">'+t.mesa+"</span></div>":"<br>"}

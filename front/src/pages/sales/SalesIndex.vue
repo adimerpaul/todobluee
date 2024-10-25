@@ -131,40 +131,40 @@
           <div class="col-12 col-md-2 q-pa-xs">
             <q-select v-model="client.llamada" label="Llamada" outlined dense :options="cantidades" :rules="[val => val > 0 || 'Debe seleccionar una cantidad']"/>
           </div>
-          <div class="col-12">
-            <div class="row">
-              <div class="col-2">
-                <q-select v-model="cantidad" label="Cantidad" outlined dense :options="cantidades" />
-              </div>
-              <div class="col-3">
-                <q-select v-model="refrescoSelect" label="Refresco" outlined dense :options="refrescoSelects" >
-                  <template v-slot:after>
-                    <q-btn color="green" dense rounded icon="add" @click="colocarRefresco"/>
-                  </template>
-                </q-select>
-              </div>
-              <div class="col-7">
-                <q-input v-model="refresco" label="Refresco" outlined dense clearable/>
-              </div>
-            </div>
-          </div>
-          <div class="col-12">
-            <div class="row">
-              <div class="col-2">
-                <q-select v-model="cantidad2" label="Cantidad" outlined dense :options="cantidades" />
-              </div>
-              <div class="col-3">
-                <q-select v-model="polloSelect" label="Pollo" outlined dense :options="pollosSelect" >
-                  <template v-slot:after>
-                    <q-btn color="green" dense rounded icon="add" @click="colocarPollo"/>
-                  </template>
-                </q-select>
-              </div>
-              <div class="col-7">
-                <q-input v-model="pollo" label="Pollo" outlined dense clearable/>
-              </div>
-            </div>
-          </div>
+<!--          <div class="col-12">-->
+<!--            <div class="row">-->
+<!--              <div class="col-2">-->
+<!--                <q-select v-model="cantidad" label="Cantidad" outlined dense :options="cantidades" />-->
+<!--              </div>-->
+<!--              <div class="col-3">-->
+<!--                <q-select v-model="refrescoSelect" label="Refresco" outlined dense :options="refrescoSelects" >-->
+<!--                  <template v-slot:after>-->
+<!--                    <q-btn color="green" dense rounded icon="add" @click="colocarRefresco"/>-->
+<!--                  </template>-->
+<!--                </q-select>-->
+<!--              </div>-->
+<!--              <div class="col-7">-->
+<!--                <q-input v-model="refresco" label="Refresco" outlined dense clearable/>-->
+<!--              </div>-->
+<!--            </div>-->
+<!--          </div>-->
+<!--          <div class="col-12">-->
+<!--            <div class="row">-->
+<!--              <div class="col-2">-->
+<!--                <q-select v-model="cantidad2" label="Cantidad" outlined dense :options="cantidades" />-->
+<!--              </div>-->
+<!--              <div class="col-3">-->
+<!--                <q-select v-model="polloSelect" label="Pollo" outlined dense :options="pollosSelect" >-->
+<!--                  <template v-slot:after>-->
+<!--                    <q-btn color="green" dense rounded icon="add" @click="colocarPollo"/>-->
+<!--                  </template>-->
+<!--                </q-select>-->
+<!--              </div>-->
+<!--              <div class="col-7">-->
+<!--                <q-input v-model="pollo" label="Pollo" outlined dense clearable/>-->
+<!--              </div>-->
+<!--            </div>-->
+<!--          </div>-->
           <div class="col-12 col-md-12 q-pa-xs">
             <q-input v-model="client.comment" label="Comentario" outlined dense  />
           </div>
@@ -210,7 +210,7 @@ export default {
     };
   },
   created() {
-    for (let i = 1; i <= 100; i++) {
+    for (let i = 0; i <= 100; i++) {
       this.cantidades.push(i);
     }
     this.getProducts();
@@ -288,7 +288,8 @@ export default {
         ci: 0,
         name: 'SN',
         mesa: 'MESA',
-        pago: 'EFECTIVO'
+        pago: 'EFECTIVO',
+        llamada: 0,
       };
     },
     categoryClick(category) {

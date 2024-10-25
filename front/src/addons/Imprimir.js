@@ -466,11 +466,11 @@ Oruro</div>
     <div style="padding: 0.0cm 0.3cm 0.0cm 0.3cm;  font-family:Verdana, sans-serif; position:relative; margin-top:0">
        ${type=='INGRESO'?'<div class="numero" style="">'+sale.llamada+'</div>':''}
        ${type=='INGRESO' && sale.name != 'SN'?'<div class="textocab" style="">'+sale.name+'</div>':''}
-     
+
       <div class='titulo1'>
       ${type=='INGRESO'?'CONTACTOS: 76130006':'RECIBO DE EGRESO'}
       </div>
-      <div class='titulo2'>AV. TACNA ENTRE JAEN Y TOMAS FRIAS</div>
+      <div class='titulo2'>Calle Tomas Frías N.º 551 entre Arica e Iquique PLAZA: RAFAEL PABON</div>
       <table class='tab1'><tr><td>`+sale.date+`</td><td>`+sale.time+`</td></tr></table><br>
       ${tabla}
       ${type=='INGRESO'?'<div class="pie" style="text-align: right;font-weight: bold;font-size: 15px">TICKET '+ sale.numero +' <span style="'+estilo+'">' +sale.mesa +"</span></div>":"<br>"}
@@ -484,7 +484,7 @@ Oruro</div>
     document.getElementById('myelement').innerHTML = cadena
     const d = new Printd()
     d.print(document.getElementById('myelement'))
-  
+
 }
 
   static head () {

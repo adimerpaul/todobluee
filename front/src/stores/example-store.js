@@ -8,8 +8,8 @@ export const useCounterStore = defineStore('counter', {
     orders: [],
     buys: [],
     env:{
-      razonsocial: 'BYPASS BURGER',
-      direccion: 'AV. TACNA ENTRE JAEN Y TOMAS FRIAS',
+      razonsocial: 'Todo blue',
+      direccion: 'Calle Tomas Frías N.º 551 entre Arica e Iquique PLAZA: RAFAEL PABON',
       telefono: '75356595',
       nit: '',
     }
