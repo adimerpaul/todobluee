@@ -121,9 +121,9 @@
               </div>
               <div class="col-12 col-md-6">
                 <label class="text-caption text-bold">Estado:</label>
-                <q-toggle v-model="product.status" :color="product.status ? 'green' : 'red'" true-value="ACTIVE" false-value="INACTIVE">
-                  <div :class="`text-${product.status === 'ACTIVE' ? 'green' : 'red'} text-subtitle2 text-bold`">
-                    {{product.status === 'ACTIVE' ? 'Activo' : 'Inactivo'}}
+                <q-toggle v-model="product.status" :color="product.status ? 'green' : 'red'" true-value="Active" false-value="Inactive">
+                  <div :class="`text-${product.status === 'Active' ? 'green' : 'red'} text-subtitle2 text-bold`">
+                    {{product.status === 'Active' ? 'Activo' : 'Inactivo'}}
                   </div>
                 </q-toggle>
               </div>
@@ -452,7 +452,7 @@ export default {
         price: '',
         stock: '',
         image: 'images.png',
-        status: 'ACTIVE',
+        status: 'Active',
         costo: '',
       }
     },

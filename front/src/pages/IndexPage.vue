@@ -275,7 +275,7 @@ export default {
       this.loading = true;
       this.$axios.post('/caja',this.chica).then(response => {
         this.$alert.success('Caja  registrado');
-        this.ultimaCajaGet();
+        // this.ultimaCajaGet();
         this.dialogCaja = false;
       }).catch(error => {
         console.error(error);
@@ -305,7 +305,7 @@ export default {
         this.$alert.success('Egreso registrado');
         Imprimir.recibo(response.data);
         // this.salesGet();
-        this.ultimaCajaGet();
+        // this.ultimaCajaGet();
         this.egresoDialog = false;
       }).catch(error => {
         console.error(error);
@@ -360,7 +360,7 @@ export default {
             this.detalleGasto.push(r)
         });
         this.gananciaGet()
-        this.ultimaCajaGet()
+        // this.ultimaCajaGet()
       }).catch(error => {
         console.error(error);
       }).finally(() => {
